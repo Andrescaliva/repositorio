@@ -10,7 +10,7 @@ public class Mano {
 	
 	public void mostrar() {
 		for(int i=0;i<cantCartas;i++) {
-			System.out.println(cartas[i]);
+			System.out.println(i+1+" - "+cartas[i]);
 		}
 	}
 	
@@ -20,11 +20,20 @@ public class Mano {
 	}
 	
 	public Carta jugarCarta(int k) {
-		Carta aux = cartas[k];
-		cartas[k]=null;
-		cantCartas--;
-		return aux;
+		if(k<cantCartas) {
+			Carta aux = cartas[k];
+			cartas[k]=cartas[cantCartas-1];
+			cantCartas--;
+			return aux;
+		}else {
+			return null;
+		}
 		
+		
+	}
+	
+	public int cantidadCartas() {
+		return cantCartas;
 	}
 
 }

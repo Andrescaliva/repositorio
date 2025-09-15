@@ -38,5 +38,16 @@ public class Mazo {
 			cartas[pos2]=aux;
 		}
 	}
+	
+	public Carta darCarta() {
+		Carta aux = cartas[cantCartas-1];
+		cartas[cantCartas-1]=null;
+		cantCartas--;
+		return aux;
+	}
+	
+	public int cantCartas() {
+		return cantCartas;
+	}
 
 }
